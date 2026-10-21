@@ -1,46 +1,216 @@
-<img width="451" height="221" alt="image" src="https://github.com/user-attachments/assets/3628b424-a8bf-48f9-8d35-4079e0dcbecd" />
+# Практическая работа №1 - Использование простых команд Linux
 
+***
 
-<img width="271" height="33" alt="image" src="https://github.com/user-attachments/assets/6a933ecf-56ef-43f4-b480-963907a37eef" />
+## Цель работы
 
-<img width="458" height="614" alt="image" src="https://github.com/user-attachments/assets/4bea4783-2fae-4df5-b211-144c11c343d0" />
+Изучить и освоить простые команды Linux для навигации по файловой системе, просмотра содержимого файлов, поиска информации и работы с каталогами.
 
+## Оборудование и программное обеспечение
 
-<img width="893" height="47" alt="image" src="https://github.com/user-attachments/assets/f22d2d74-8b83-49f9-9be0-481eeb447c95" />
+- Виртуальная машина с Debian GNU/Linux 13.
+- Терминал Linux.
 
-<img width="355" height="42" alt="image" src="https://github.com/user-attachments/assets/f4f88980-7064-4b27-b218-8a9fbf317519" />
+***
 
+## Ход работы
 
-<img width="700" height="60" alt="image" src="https://github.com/user-attachments/assets/781b81ab-50c2-4493-8c59-0de64f5935a5" />
-<img width="603" height="1179" alt="image" src="https://github.com/user-attachments/assets/124aff4a-d9eb-40e7-86b8-bf96c4fd86fb" />
+### Задание 1. Поиск файлов с расширением `.log`
 
+**Условие:** Перейти в каталог `/var/log` и показать все файлы с расширением `.log`.
 
-<img width="484" height="15" alt="image" src="https://github.com/user-attachments/assets/a008f5cc-62ef-416c-8e16-0a439b1dfa3b" />
-<img width="389" height="610" alt="image" src="https://github.com/user-attachments/assets/4652fca2-de1a-4e5a-8d5b-8a7cf2276991" />
+**Команды:**
 
+```bash
+cd /var/log
+ls *.log
+```
 
-<img width="410" height="44" alt="image" src="https://github.com/user-attachments/assets/ca5b3db5-5525-4e46-8451-d22549a51202" />
+**Описание:** Команда `cd` выполняет переход в каталог `/var/log`. Команда `ls *.log` выводит файлы с расширением `.log`.
 
+**Результат:** В каталоге найдены файлы `alternatives.log` и `dpkg.log`.
 
-<img width="400" height="21" alt="image" src="https://github.com/user-attachments/assets/43f287f5-cd2f-4cd4-99cb-46713f8bcf5a" />
-<img width="274" height="611" alt="image" src="https://github.com/user-attachments/assets/cfbff2b2-a645-4e7c-9346-f475645f802e" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/3628b424-a8bf-48f9-8d35-4079e0dcbecd" />
 
+***
 
+### Задание 2. Сортировка файлов по размеру
 
-<img width="353" height="17" alt="image" src="https://github.com/user-attachments/assets/d22e74f7-50f1-4424-8ac1-0ab0a561d45d" />
-<img width="455" height="614" alt="image" src="https://github.com/user-attachments/assets/c9177f93-a8ad-46a3-8a98-d0eae3991a24" />
+**Условие:** Перейти в каталог `/usr/bin` и вывести список файлов в порядке убывания размера.
 
+**Команды:**
 
-<img width="597" height="18" alt="image" src="https://github.com/user-attachments/assets/963c8004-afab-47fb-84ab-f203947e96bb" />
-<img width="367" height="605" alt="image" src="https://github.com/user-attachments/assets/d1f47ab0-fe8c-4a00-99f2-599ad5dd9e18" />
+```bash
+cd /usr/bin
+ls -lS
+```
 
+**Описание:** Параметр `-l` выводит подробную информацию о файлах, а `-S` сортирует их по размеру от большего к меньшему.
 
+**Результат:** Получен список содержимого каталога `/usr/bin`, отсортированный по размеру.
 
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/6a933ecf-56ef-43f4-b480-963907a37eef" />
 
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/4bea4783-2fae-4df5-b211-144c11c343d0" />
 
+***
 
+### Задание 3. Просмотр содержимого файла
 
+**Условие:** Отобразить содержимое файла `/etc/apt/sources.list`.
 
+**Команда:**
 
+```bash
+cat /etc/apt/sources.list
+```
 
+**Описание:** Команда `cat` выводит содержимое указанного файла в терминал.
 
+**Результат:** Выведено содержимое файла с настройками источников пакетов Debian.
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/f22d2d74-8b83-49f9-9be0-481eeb447c95" />
+
+***
+
+### Задание 4. Поиск строк со словом `root`
+
+**Условие:** Найти в файле `/etc/passwd` все строки, содержащие слово `root`.
+
+**Команда:**
+
+```bash
+grep "root" /etc/passwd
+```
+
+**Описание:** Команда `grep` выполняет поиск указанного текста в файле и выводит все строки, содержащие совпадение.
+
+**Результат:** Выведены строки файла `/etc/passwd`, содержащие `root`.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/f4f88980-7064-4b27-b218-8a9fbf317519" />
+
+***
+
+### Задание 5. Вывод строк без комментариев
+
+**Условие:** Вывести из файла `/etc/services` строки, в которых отсутствует символ `#`.
+
+**Команда:**
+
+```bash
+grep -v '#' /etc/services
+```
+
+**Описание:** Параметр `-v` инвертирует условие поиска. Команда выводит строки, не содержащие символ `#`.
+
+**Результат:** Выведены строки файла `/etc/services`, в которых отсутствует символ комментария `#`.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/781b81ab-50c2-4493-8c59-0de64f5935a5" />
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/124aff4a-d9eb-40e7-86b8-bf96c4fd86fb" />
+
+***
+
+### Задание 6. Поиск файлов и каталогов с расширениями `.conf` и `.conf.d`
+
+**Условие:** Найти в каталоге `/etc` файлы и каталоги с именами, заканчивающимися на `.conf` или `.conf.d`, используя одну команду.
+
+**Команда:**
+
+```bash
+find /etc \( -name "*.conf" -o -name "*.conf.d" \)
+```
+
+**Описание:** Команда `find` выполняет поиск по имени. Параметр `-name` задаёт шаблон имени, а `-o` означает логическое «ИЛИ». Скобки объединяют условия поиска.
+
+**Результат:** Выведен список найденных объектов, соответствующих заданным шаблонам.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/a008f5cc-62ef-416c-8e16-0a439b1dfa3b" />
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/4652fca2-de1a-4e5a-8d5b-8a7cf2276991" />
+
+***
+
+### Задание 7. Подсчёт символических ссылок
+
+**Условие:** Определить количество символических ссылок в корневом каталоге `/`.
+
+**Команда:**
+
+```bash
+find / -maxdepth 1 -type l 2>/dev/null | wc -l
+```
+
+**Описание:** Параметр `-maxdepth 1` ограничивает поиск корневым каталогом. Параметр `-type l` выбирает символические ссылки. Команда `wc -l` подсчитывает количество строк. Перенаправление `2>/dev/null` скрывает сообщения об ошибках.
+
+**Результат:** Получено количество символических ссылок в корневом каталоге.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/ca5b3db5-5525-4e46-8451-d22549a51202" />
+
+***
+
+### Задание 8. Поиск каталогов в `/usr/share`
+
+**Условие:** Найти все каталоги в `/usr/share` на глубине не более двух уровней.
+
+**Команда:**
+
+```bash
+find /usr/share -maxdepth 2 -type d
+```
+
+**Описание:** Параметр `-maxdepth 2` ограничивает глубину поиска двумя уровнями, включая исходный каталог. Параметр `-type d` выбирает только каталоги.
+
+**Результат:** Выведен список каталогов, удовлетворяющих заданному ограничению глубины.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/43f287f5-cd2f-4cd4-99cb-46713f8bcf5a" />
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/cfbff2b2-a645-4e7c-9346-f475645f802e" />
+
+***
+
+### Задание 9. Поиск файлов, принадлежащих пользователю `root`
+
+**Условие:** Найти в каталоге `/var` все файлы, принадлежащие пользователю `root`.
+
+**Команда:**
+
+```bash
+find /var -type f -user root
+```
+
+**Описание:** Параметр `-type f` выбирает обычные файлы, а `-user root` выполняет отбор файлов по владельцу.
+
+**Результат:** Выведен список файлов в `/var`, принадлежащих пользователю `root`.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d22e74f7-50f1-4424-8ac1-0ab0a561d45d" />
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/c9177f93-a8ad-46a3-8a98-d0eae3991a24" />
+
+***
+
+### Задание 10. Поиск файлов, содержащих слово `root`
+
+**Условие:** Найти в `/etc` файлы в пределах двух уровней каталогов, внутри которых упоминается пользователь `root`. Использовать `find` с командой `grep`.
+
+**Команда:**
+
+```bash
+find /etc -maxdepth 2 -type f -exec grep -l "root" {} \; 2>/dev/null
+```
+
+**Описание:** Команда `find` ищет обычные файлы в каталоге `/etc` с ограничением глубины. Параметр `-exec` запускает `grep` для каждого найденного файла. Параметр `-l` выводит имена файлов, в которых найдено совпадение. Перенаправление `2>/dev/null` скрывает сообщения об ошибках.
+
+**Результат:** Выведен список файлов, содержащих слово `root`.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/963c8004-afab-47fb-84ab-f203947e96bb" />
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d1f47ab0-fe8c-4a00-99f2-599ad5dd9e18" />
+
+***
+
+## Вывод
+
+В ходе практической работы были изучены и применены команды `cd`, `ls`, `cat`, `grep` и `find`. Получены навыки перехода между каталогами, просмотра содержимого файлов, сортировки данных, поиска по тексту и имени, определения владельца файлов и подсчёта символических ссылок.
+
+Поставленная цель работы достигнута.
